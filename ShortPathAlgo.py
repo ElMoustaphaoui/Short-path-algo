@@ -48,3 +48,27 @@ print("le plus court chemin est : ",[[P[0],P[C[0]+1]],[P[1],P[C[1]+1]],[P[2],P[C
 print("la plus coutre distance est : " ,t_c)
 print("le temps de l'execution est : " ,t_f-t_0)
 V=[[P[0],P[C[0]+1]],[P[1],P[C[1]+1]],[P[2],P[C[2]+1]],[P[3],P[C[3]+1]],[P[4],P[C[4]+1]],[P[5],P[C[5]+1]]]
+
+   # Tracage
+for i in range (0,6): 
+    W=V[i]
+    a=acos((W[1][0]-W[0][0])/((W[0][0]-W[1][0])**2+(W[0][1]-W[1][1])**2)**(1/2))
+    b=asin((W[1][1]-W[0][1])/((W[0][0]-W[1][0])**2+(W[0][1]-W[1][1])**2)**(1/2))
+    turtle.up()
+    turtle.setpos(W[0][0],W[0][1])
+    if b>0 :
+        turtle.left(a*180/pi)
+    elif b<0 :
+        turtle.right(a*180/pi)
+    else :
+        turtle.left(a*180/pi)
+    turtle.down()
+    turtle.forward(((W[0][0]-W[1][0])**2+(W[0][1]-W[1][1])**2)**(1/2))
+    turtle.up()
+    turtle.setpos(0,0)
+    if b>0 :
+        turtle.right(a*180/pi)
+    elif b<0 :
+        turtle.left(a*180/pi)
+    else :
+        turtle.right(a*180/pi)
