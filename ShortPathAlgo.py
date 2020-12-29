@@ -1,6 +1,7 @@
 import time 
 from math import *
 import turtle
+
 L=[0]*7
 D=[[0]*6 for i in range (6)]
 for i in range(0,7):
@@ -40,7 +41,6 @@ for p_0 in range (len(L)):
                                                        t_c=s_2
                                                        C=[a_0,b_1,c_2,d_3,e_4,5]
                                                        P=[L[p_0],L[p_1],L[p_2],L[p_3],L[p_4],L[p_5],L[p_6]]  
-
 
 t_f=time.clock()
 # Show Result
