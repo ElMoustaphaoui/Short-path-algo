@@ -1,13 +1,13 @@
 import time 
 from math import *
-import turtle
+
 
 L=[0]*7
 D=[[0]*6 for i in range (6)]
 for i in range(0,7):
     # taking the coordinates of the points
     L[i]=[float(input("entrer l'abcisse du point "+str(i)+" : ")),float(input("entrer l'ordonné du point "+str(i)+" : "))]  # les cordonées des points
-t_0=time.clock()
+#t_0=time.clock()
 def distance(A,B):
     d=((A[0]-B[0])**2+(A[1]-B[1])**2)**(1/2)
     return d
@@ -42,32 +42,9 @@ for p_0 in range (len(L)):
                                                        C=[a_0,b_1,c_2,d_3,e_4,5]
                                                        P=[L[p_0],L[p_1],L[p_2],L[p_3],L[p_4],L[p_5],L[p_6]]  
 
-t_f=time.clock()
+#t_f=time.clock()
 # Show Result
 print("le plus court chemin est : ",[[P[0],P[C[0]+1]],[P[1],P[C[1]+1]],[P[2],P[C[2]+1]],[P[3],P[C[3]+1]],[P[4],P[C[4]+1]],[P[5],P[C[5]+1]]])
 print("la plus coutre distance est : " ,t_c)
-print("le temps de l'execution est : " ,t_f-t_0)
+#print("le temps de l'execution est : " ,t_f-t_0)
 V=[[P[0],P[C[0]+1]],[P[1],P[C[1]+1]],[P[2],P[C[2]+1]],[P[3],P[C[3]+1]],[P[4],P[C[4]+1]],[P[5],P[C[5]+1]]]
-# Tracage
-for i in range (0,6): 
-    W=V[i]
-    a=acos((W[1][0]-W[0][0])/((W[0][0]-W[1][0])**2+(W[0][1]-W[1][1])**2)**(1/2))
-    b=asin((W[1][1]-W[0][1])/((W[0][0]-W[1][0])**2+(W[0][1]-W[1][1])**2)**(1/2))
-    turtle.up()
-    turtle.setpos(W[0][0],W[0][1])
-    if b>0 :
-        turtle.left(a*180/pi)
-    elif b<0 :
-        turtle.right(a*180/pi)
-    else :
-        turtle.left(a*180/pi)
-    turtle.down()
-    turtle.forward(((W[0][0]-W[1][0])**2+(W[0][1]-W[1][1])**2)**(1/2))
-    turtle.up()
-    turtle.setpos(0,0)
-    if b>0 :
-        turtle.right(a*180/pi)
-    elif b<0 :
-        turtle.left(a*180/pi)
-    else :
-        turtle.right(a*180/pi)
